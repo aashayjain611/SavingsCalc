@@ -3,34 +3,34 @@ package org.aashay.spit.SavingsCalc.Investments;
 public class Investments {
 	
 	private String uid;
-	private int mutualFunds;
-	private int stocks;
-	private int others;
+	private float mutualFunds;
+	private float stocks;
+	private float others;
 	public String getUid() {
 		return uid;
 	}
 	public void setUid(String uid) {
 		this.uid = uid;
 	}
-	public int getMutualFunds() {
+	public float getMutualFunds() {
 		return mutualFunds;
 	}
-	public void setMutualFunds(int mutualFunds) {
+	public void setMutualFunds(float mutualFunds) {
 		this.mutualFunds = mutualFunds;
 	}
-	public int getStocks() {
+	public float getStocks() {
 		return stocks;
 	}
-	public void setStocks(int stocks) {
+	public void setStocks(float stocks) {
 		this.stocks = stocks;
 	}
-	public int getOthers() {
+	public float getOthers() {
 		return others;
 	}
-	public void setOthers(int others) {
+	public void setOthers(float others) {
 		this.others = others;
 	}
-	public Investments(String uid, int mutualFunds, int stocks, int others) {
+	public Investments(String uid, float mutualFunds, float stocks, float others) {
 		super();
 		this.uid = uid;
 		this.mutualFunds = mutualFunds;

@@ -51,7 +51,7 @@ public class UserService {
 			String query="select * from Users where UserID='"+uid+"'";
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next())
-				list.add(new User(rs.getString(1),rs.getString(2),rs.getDate(3),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getBinaryStream(8)));
+				list.add(new User(rs.getString(1),rs.getString(2),rs.getDate(3).toString(),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getBinaryStream(8)));
 		}
 		catch(Exception e)
 		{

@@ -1,13 +1,12 @@
 package org.aashay.spit.SavingsCalc.User;
 
 import java.io.InputStream;
-import java.sql.Date;
 
 public class User {
 	
 	private String name;
 	private String uid;
-	private Date dob;
+	private String dob;
 	private int age;
 	private String gender;
 	private String category;
@@ -20,10 +19,10 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getDob() {
+	public String getDob() {
 		return dob;
 	}
-	public void setDob(Date dob) {
+	public void setDob(String dob) {
 		this.dob = dob;
 	}
 	public int getAge() {
@@ -67,7 +66,7 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public User(String name,String uid, Date dob, int age, String gender, String category, String occupation, InputStream image) {
+	public User(String name,String uid, String dob, int age, String gender, String category, String occupation, InputStream image) {
 		super();
 		this.name = name;
 		this.uid=uid;
@@ -78,7 +77,7 @@ public class User {
 		this.occupation = occupation;
 		this.image = image;
 	}
-	public User(String name, Date dob, int age, String gender, String category, String occupation, InputStream image) {
+	public User(String name, String dob, int age, String gender, String category, String occupation, InputStream image) {
 		super();
 		this.name = name;
 		this.dob = dob;

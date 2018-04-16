@@ -1,19 +1,17 @@
 package org.aashay.spit.SavingsCalc.Expense;
 
-import java.sql.Date;
-
 public class Expense {
 
 	private String uid;
-	private Date date;
+	private String date;
 	private int quantity;
 	private String product;
 	private int price;
 	private int amount;
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public int getQuantity() {
@@ -46,7 +44,7 @@ public class Expense {
 	public void setUid(String uid) {
 		this.uid = uid;
 	}
-	public Expense(String uid,Date date, int quantity, String product, int price) {
+	public Expense(String uid,String date, String product, int quantity, int price) {
 		super();
 		this.uid=uid;
 		this.date = date;
@@ -54,7 +52,7 @@ public class Expense {
 		this.product = product;
 		this.price = price;
 	}
-	public Expense(String uid,Date date, int quantity, String product, int price, int amount) {
+	public Expense(String uid,String date, String product,int quantity, int price, int amount) {
 		super();
 		this.uid=uid;
 		this.date = date;

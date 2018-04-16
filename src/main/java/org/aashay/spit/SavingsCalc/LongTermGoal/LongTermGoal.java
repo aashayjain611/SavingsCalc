@@ -4,7 +4,7 @@ public class LongTermGoal {
 	
 	private String uid;
 	private String monthYear;
-	private int amount;
+	private float amount;
 	private float retirement;
 	private float investment;
 	private float buffer;
@@ -14,7 +14,7 @@ public class LongTermGoal {
 		this.uid = uid;
 		this.monthYear = monthYear;
 	}
-	public LongTermGoal(String uid, String monthYear, int amount, float retirement, float investment, float buffer) {
+	public LongTermGoal(String uid, String monthYear, float amount, float retirement, float investment, float buffer) {
 		super();
 		this.uid = uid;
 		this.monthYear = monthYear;
@@ -40,10 +40,10 @@ public class LongTermGoal {
 	public void setMonthYear(String monthYear) {
 		this.monthYear = monthYear;
 	}
-	public int getAmount() {
+	public float getAmount() {
 		return amount;
 	}
-	public void setAmount(int amount) {
+	public void setAmount(float amount) {
 		this.amount = amount;
 	}
 	public float getRetirement() {

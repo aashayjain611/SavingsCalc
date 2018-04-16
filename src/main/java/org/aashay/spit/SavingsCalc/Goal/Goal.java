@@ -7,7 +7,7 @@ public class Goal {
 	private float poi;
 	private float savingDeficit;
 	private float amount;
-	public Goal(String uid, String purpose, float poi, float savingDeficit, float amount) {
+	public Goal(String uid, String purpose, float poi, float amount, float savingDeficit) {
 		super();
 		this.uid = uid;
 		this.purpose = purpose;
