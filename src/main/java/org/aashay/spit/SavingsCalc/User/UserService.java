@@ -9,7 +9,7 @@ import org.aashay.spit.SavingsCalcDatabase.MySql;
 
 public class UserService {
 	
-	MySql mysql=new MySql();
+	private MySql mysql=new MySql();
 
 	public String generateUid(int n)
 	{
@@ -28,7 +28,7 @@ public class UserService {
 		try
 		{
 			Statement stmt=mysql.connectToDatabase();
-			String query="select UserID from Users";
+			String query="select UserID from User";
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next())
 				list.add(rs.getString(1));
@@ -48,10 +48,10 @@ public class UserService {
 		try
 		{
 			Statement stmt=mysql.connectToDatabase();
-			String query="select * from Users where UserID='"+uid+"'";
+			String query="select * from User where UserID='"+uid+"'";
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next())
-				list.add(new User(rs.getString(1),rs.getString(2),rs.getDate(3).toString(),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getString(7),rs.getBinaryStream(8)));
+				list.add(new User(rs.getString(1),rs.getString(2),rs.getDate(3).toString(),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getString(7)));
 		}
 		catch(Exception e)
 		{
@@ -66,7 +66,7 @@ public class UserService {
 		{
 			user.setUid(generateUid(8));
 			Statement stmt=mysql.connectToDatabase();
-			String query="insert into Users value('"+user.getName()+"','"+user.getUid()+"','"+user.getDob()+"',"+user.getAge()+",'"+user.getGender()+"','"+user.getCategory()+"','"+user.getOccupation()+"',"+user.getImage()+")";
+			String query="insert into User value('"+user.getName()+"','"+user.getUid()+"','"+user.getDob()+"',"+user.getAge()+",'"+user.getGender()+"','"+user.getCategory()+"','"+user.getOccupation()+"')";
 			return stmt.executeUpdate(query);
 		}
 		catch(Exception e)

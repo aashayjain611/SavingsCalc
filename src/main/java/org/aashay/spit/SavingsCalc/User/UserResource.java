@@ -11,17 +11,23 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 import org.aashay.spit.SavingsCalc.Expense.ExpenseResource;
-import org.aashay.spit.SavingsCalc.Goal.GoalResource;
 import org.aashay.spit.SavingsCalc.Income.IncomeResource;
 import org.aashay.spit.SavingsCalc.Investments.InvestmentsResource;
-import org.aashay.spit.SavingsCalc.LongTermGoal.LongTermGoalResource;
+import org.aashay.spit.SavingsCalc.LongTermGoal.LongTermResource;
+import org.aashay.spit.SavingsCalc.ShortTermGoal.ShortTermResource;
+
+/*import Expense.ExpenseResource;
+import Income.IncomeResource;
+import Investment.InvestmentResource;
+import Long_term_goal.LongTermResource;
+import Short_term_goal.ShortTermResource;*/
 
 @Path("/user")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class UserResource {
 	
-	UserService userService=new UserService();
+	private UserService userService=new UserService();
 	
 	@GET
 	@Path("/{uid}")
@@ -37,32 +43,32 @@ public class UserResource {
 	}
 	
 	@Path("/{uid}/income")
-	public IncomeResource getIncome(@PathParam("uid") String uid)
+	public IncomeResource getIncome()
 	{
-		return new IncomeResource(uid);
+		return new IncomeResource();
 	}
 	
 	@Path("/{uid}/expense")
-	public ExpenseResource getExpense(@PathParam("uid") String uid)
+	public ExpenseResource getExpense()
 	{
-		return new ExpenseResource(uid);
+		return new ExpenseResource();
 	}
 	
-	@Path("/{uid}/goal")
-	public GoalResource getGoal(@PathParam("uid") String uid)
+	@Path("/{uid}/shortterm")
+	public ShortTermResource getGoal()
 	{
-		return new GoalResource(uid);
+		return new ShortTermResource();
 	}
 
 	@Path("/{uid}/investments")
-	public InvestmentsResource getInvestment(@PathParam("uid") String uid)
+	public InvestmentsResource getInvestment()
 	{
-		return new InvestmentsResource(uid);
+		return new InvestmentsResource();
 	}
 	
 	@Path("/{uid}/longterm")
-	public LongTermGoalResource getLongTerm(@PathParam("uid") String uid)
+	public LongTermResource getLongTerm()
 	{
-		return new LongTermGoalResource(uid);
+		return new LongTermResource();
 	}
 }

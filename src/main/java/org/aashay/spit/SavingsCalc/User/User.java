@@ -1,7 +1,5 @@
 package org.aashay.spit.SavingsCalc.User;
 
-import java.io.InputStream;
-
 public class User {
 	
 	private String name;
@@ -11,7 +9,6 @@ public class User {
 	private String gender;
 	private String category;
 	private String occupation;
-	private InputStream image;
 	
 	public String getName() {
 		return name;
@@ -49,12 +46,6 @@ public class User {
 	public void setOccupation(String occupation) {
 		this.occupation = occupation;
 	}
-	public InputStream getImage() {
-		return image;
-	}
-	public void setImage(InputStream image) {
-		this.image = image;
-	}
 	public String getUid() {
 		return uid;
 	}
@@ -66,7 +57,7 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public User(String name,String uid, String dob, int age, String gender, String category, String occupation, InputStream image) {
+	public User(String name,String uid, String dob, int age, String gender, String category, String occupation) {
 		super();
 		this.name = name;
 		this.uid=uid;
@@ -75,9 +66,8 @@ public class User {
 		this.gender = gender;
 		this.category = category;
 		this.occupation = occupation;
-		this.image = image;
 	}
-	public User(String name, String dob, int age, String gender, String category, String occupation, InputStream image) {
+	public User(String name, String dob, int age, String gender, String category, String occupation) {
 		super();
 		this.name = name;
 		this.dob = dob;
@@ -85,7 +75,6 @@ public class User {
 		this.gender = gender;
 		this.category = category;
 		this.occupation = occupation;
-		this.image = image;
 	}
 	
 }

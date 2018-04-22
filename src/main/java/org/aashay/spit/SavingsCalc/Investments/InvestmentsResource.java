@@ -3,18 +3,14 @@ package org.aashay.spit.SavingsCalc.Investments;
 import java.util.ArrayList;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.PathParam;
 
 public class InvestmentsResource {
 	
-	private String uid;
 	private InvestmentsService investmentsService=new InvestmentsService();
 
-	public InvestmentsResource(String uid) {
-		this.uid=uid;
-	}
-	
 	@GET
-	public ArrayList<Investments> getInvestmentByUid()
+	public ArrayList<Investments> getInvestmentByUid(@PathParam("uid") String uid)
 	{
 		return investmentsService.getInvestmentsByUid(uid);
 	}
