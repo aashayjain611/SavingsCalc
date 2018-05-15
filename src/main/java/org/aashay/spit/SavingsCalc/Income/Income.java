@@ -54,9 +54,8 @@ public class Income {
 		this.income = income;
 		this.tax = tax;
 	}
-	public Income(String uid, String month, String source, int income, float tax, float inHand) {
+	public Income(String month, String source, int income, float tax, float inHand) {
 		super();
-		this.uid = uid;
 		this.month = month;
 		this.source = source;
 		this.income = income;

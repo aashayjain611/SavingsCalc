@@ -5,10 +5,12 @@ import java.util.ArrayList;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+@Path("/")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class IncomeResource {
@@ -27,6 +29,7 @@ public class IncomeResource {
 	}
 	
 	@POST
+	@Path("/post")
 	public int postToDatabase(Income income)
 	{
 		return incomeService.postToDatabase(income);

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 
 public class ShortTermResource {
@@ -17,6 +18,7 @@ public class ShortTermResource {
 	}
 	
 	@POST
+	@Path("/post")
 	public int postToDatabase(ShortTerm shortTerm)
 	{
 		return sts.postToDatabase(shortTerm);

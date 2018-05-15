@@ -1,13 +1,12 @@
 package org.aashay.spit.SavingsCalc.User;
 
-import java.util.ArrayList;
-
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import org.aashay.spit.SavingsCalc.Expense.ExpenseResource;
@@ -30,8 +29,15 @@ public class UserResource {
 	private UserService userService=new UserService();
 	
 	@GET
+	public User getUid(@QueryParam("name") String name,
+						@QueryParam("password") String password)
+	{
+		return userService.getUid(name,password);
+	}
+	
+	@GET
 	@Path("/{uid}")
-	public ArrayList<User> getUserByUid(@PathParam("uid") String uid)
+	public User getUserByUid(@PathParam("uid") String uid)
 	{
 		return userService.getUserByUid(uid);
 	}

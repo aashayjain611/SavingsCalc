@@ -17,10 +17,10 @@ public class IncomeService {
 		try
 		{
 			Statement stmt=mysql.connectToDatabase();
-			String query="select * from Income where UserID='"+uid+"'";
+			String query="select Month,Source,Income,Tax,In_Hand from Income where UserID='"+uid+"'";
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next())
-				list.add(new Income(rs.getString(1),rs.getDate(2).toString(),rs.getString(3),rs.getInt(4),rs.getFloat(5),rs.getFloat(6)));
+				list.add(new Income(rs.getString(1).toString(),rs.getString(2),rs.getInt(3),rs.getFloat(4),rs.getFloat(5)));
 		}
 		catch(Exception e)
 		{
@@ -31,16 +31,17 @@ public class IncomeService {
 
 	public int postToDatabase(Income income) 
 	{
+		System.out.println("Source: "+income.getSource());
+		System.out.println("Income is: "+income.getIncome());
+		System.out.println("Tax is: "+income.getTax());
+		//System.out.println(income);
 		try
 		{
-			ResultSet rs=mysql.connectToDatabase().executeQuery("create trigger trg before insert of Income.Income on Income for each row when Income<0" + 
-					"begin" + 
-					"raise_application_error(-20010,'Invalid input');" + 
-					"end;");
 			Statement stmt=mysql.connectToDatabase();
 			if(checkUid(stmt,income.getUid()))
 			{
 				String query="insert into Income values('"+income.getUid()+"','"+income.getMonth()+"','"+income.getSource()+"',"+income.getIncome()+","+income.getTax()+","+(income.getIncome()*(1-income.getTax()/100))+")";
+				System.out.println(query);
 				return stmt.executeUpdate(query);
 			}
 		}

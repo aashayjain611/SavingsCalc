@@ -17,7 +17,7 @@ public class LongTermService {
 		{
 			float inHand=0;
 			Statement stmt=mysql.connectToDatabase();
-			String query="select UserID,date_format(Month,'%M, %Y') as Month,sum(In_hand) as In_hand from Income where UserID='"+uid+"'";
+			String query="select UserID,Month,sum(In_hand) as In_hand from Income where UserID='"+uid+"'";
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next())
 			{
@@ -25,7 +25,7 @@ public class LongTermService {
 				//System.out.println(inHand);
 				int expense=0;
 				String month=rs.getString(2);
-				String query1="select UserID,date_format(Month,'%M, %Y') as Month,sum(Amount) from Expense where UserID='"+uid+"' group by date_format(Month,'%M, %Y') having Month='"+month+"'";
+				String query1="select UserID,Month,sum(Amount) from Expense where UserID='"+uid+"' group by Month having Month='"+month+"'";
 				Statement stmt1=mysql.connectToDatabase();
 				ResultSet resultSet=stmt1.executeQuery(query1);
 				if(resultSet.next())
@@ -35,8 +35,11 @@ public class LongTermService {
 				{
 					Statement statement=mysql.connectToDatabase();
 					String sql="";
+					System.out.println("Inhand: "+inHand);
+					System.out.println("Expense: "+expense);
 					float saving=inHand-expense;
-					float amount=0.13f*inHand;
+					float amount=0.13f*saving;
+					System.out.println(amount);
 					if(saving>amount)
 					{
 						sql="insert into Long_term_goal values('"+uid+"','"+month+"','Retirement',"+13+","+amount+","+amount+","+0+")";
@@ -51,7 +54,7 @@ public class LongTermService {
 						list.add(new LongTerm(uid,month,"Retirement",13,amount,saving,amount-saving));
 						saving=0;
 					}
-					amount=0.05f*inHand;
+					amount=0.05f*(inHand-expense);
 					if(saving>amount)
 					{
 						sql="insert into Long_term_goal values('"+uid+"','"+month+"','Medical',"+5+","+amount+","+amount+","+0+")";
@@ -66,7 +69,7 @@ public class LongTermService {
 						list.add(new LongTerm(uid,month,"Medical",5,amount,saving,amount-saving));
 						saving=0;
 					}
-					amount=0.02f*inHand;
+					amount=0.02f*(inHand-expense);
 					if(saving>amount)
 					{
 						sql="insert into Long_term_goal values('"+uid+"','"+month+"','Buffer',"+2+","+amount+","+amount+","+0+")";

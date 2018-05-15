@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-  <title>Savings Calculation</title>
+  <title>Savings Calculation Login</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="keywords" content="Savings, Income, I want to save, How to save">
@@ -194,7 +194,6 @@ span.psw {
   .thumbnail p {
       margin-top: 15px;
       color: #555;
-
   }
   .btn {
       padding: 10px 20px;
@@ -234,7 +233,6 @@ span.psw {
       font-size: 11px !important;
       letter-spacing: 4px;
       opacity: 0.9;
-      /*position: fixed;*/
   }
   .navbar li a, .navbar .navbar-brand {
       color: #d5d5d5 !important;
@@ -293,7 +291,8 @@ span.psw {
       </button>
       <!--<a class="navbar-brand" href="#myPage">Login</a>-->
       <!--<a class="navbar-brand" href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign in</a> -->
-      <button class="btn" id="signOut">Sign Out</button>
+      <button class="btn" data-toggle="modal" data-target="#myModalSignIn">Sign In</button>
+      <button class="btn" data-toggle="modal" data-target="#myModalSignUp">Sign Up</button>
     </div>
 
  <!--<div id="id01" class="modal">
@@ -323,12 +322,11 @@ span.psw {
     </div>
   </form>
 </div>-->
-<!--<div class="navbar navbar-inverse navbar-fixed-top" id="myNavbar">-->
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right" style="margin-bottom:5%">
         <li><a href="#myPage">HOME</a></li>
         <li><a href="#about">ABOUT</a></li>
-        <li><a href="#profile">PROFILE</a></li>
+        <!--<li><a href="#tour">PROFILE</a></li>
         <li><a href="#income">INCOME</a></li>
         <li><a href="#expenses">EXPENSES</a></li>
 
@@ -336,16 +334,17 @@ span.psw {
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">GOALS
           <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#STG">Short Term Goals</a></li>
-            <li><a href="#LTG">Long Term Goals</a></li>
+            <li><a href="#">Short Term Goals</a></li>
+            <li><a href="#">Long Term Goals</a></li>
           </ul>
-        </li>
+        </li>-->
         <!-- <li><a href="#contact">CONTACT</a></li> -->
-        <li><a href="#investment">INVESTMENT</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
       </ul>
     </div>
   </div>
 </nav>
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
@@ -359,15 +358,15 @@ span.psw {
       <div class="item active">
         <img src="savings.jpg" alt="Savings" width="1200" height="700">
         <div class="carousel-caption">
-          <h2 style="font-size:60px;">Savings</h2>
-          <p style="font-size:160%;"><a href="SavingsLogin.html">It's not about how much money you make but how you save it.</a></p>
+          <h2 style="font-size:60px;">Savings</h3>
+          <p style="font-size:160%;">It's not about how much money you make but how you save it.</p>
         </div>
       </div>
 
       <div class="item">
-        <img src="/images/Invest_Savings-e1474541012438.png" alt="Goals" width="1200" height="700">
+        <img src="Invest_Savings-e1474541012438.png" alt="Goals" width="1200" height="700">
         <div class="carousel-caption">
-          <h2 style="font-size:60px;">Set Goals</h2>
+          <h2 style="font-size:60px;">Set Goals</h3>
           <p style="font-size:140%;">The safe way to double your money is to fold it over once and put it in your pocket.</p>
         </div>
       </div>
@@ -375,7 +374,7 @@ span.psw {
       <div class="item">
         <img src="savingsjars.jpg" alt="Track of Expenses" width="1200" height="700">
         <div class="carousel-caption">
-          <h2 style="font-size:60px;">Expenses</h2>
+          <h2 style="font-size:60px;">Expenses</h3>
           <p style="font-size:160%;">Keep track of your expenses in order to save for emergency</p>
         </div>
       </div>
@@ -392,7 +391,6 @@ span.psw {
     </a>
 </div>
 
-
 <!-- Container (The About Section) -->
 <div id="about" class="container text-center">
   <h3>Savings Database Calculation</h3>
@@ -401,7 +399,6 @@ span.psw {
 advisor. You can use it to set Long term and Short term goals. The user friendly website helps in keeping a track of income, expenses and goals and helps you save money and PLAY BIG! </p>
   <br>
   <div class="row">
-    <hr style="margin-left:10px;" />
     <div class="col-sm-4">
       <p class="text-center"><strong>Aashay Jain</strong></p><br>
       <a href="#demo" data-toggle="collapse">
@@ -424,7 +421,6 @@ advisor. You can use it to set Long term and Short term goals. The user friendly
         <p>Born in 1998</p>
       </div>
     </div>
-
     <div class="col-sm-4">
       <p class="text-center"><strong>S.P.I.T</strong></p><br>
       <a href="#demo3" data-toggle="collapse">
@@ -435,28 +431,21 @@ advisor. You can use it to set Long term and Short term goals. The user friendly
         <p>Best Project</p>
         <p>Best Engineers since 2005</p>
       </div>
-    </div>
   </div>
 </div>
 
-<!-- Container (Profile Section) -->
-<div id="profile" class="bg-1">
+<!-- Container (TOUR Section)
+<div id="tour" class="bg-1">
   <div class="container">
-    <fieldset>
-    <legend><h3 class="text-center">My Profile</h3></legend>
-    <p class="text-center">I have decided to save some money.</p>
+    <h3 class="text-center">TOUR DATES</h3>
+    <p class="text-center">Lorem ipsum we'll play you some music.<br> Remember to book your tickets!</p>
     <ul class="list-group">
-      <li class="list-group-item" id="name">Name</li>
-      <li class="list-group-item" id="DOB">Date of Birth</li>
-      <li class="list-group-item" id="age">Age</li>
-      <li class="list-group-item" id="gender">Gender</li>
-      <li class="list-group-item" id="category">Category</li>
-      <li class="list-group-item" id="occupation">Occupation</li>
-
+      <li class="list-group-item">September <span class="label label-danger">Sold Out!</span></li>
+      <li class="list-group-item">October <span class="label label-danger">Sold Out!</span></li>
+      <li class="list-group-item">November <span class="badge">3</span></li>
     </ul>
-  </fieldset>
 
-  <!--  <div class="row text-center">
+    <div class="row text-center">
       <div class="col-sm-4">
         <div class="thumbnail">
           <img src="paris.jpg" alt="Paris" width="400" height="300">
@@ -481,256 +470,108 @@ advisor. You can use it to set Long term and Short term goals. The user friendly
           <button class="btn" data-toggle="modal" data-target="#myModal">Buy Tickets</button>
         </div>
       </div>
-    </div>-->
+    </div>
+  </div>-->
+
+  <!-- Modal for Sign in-->
+  <div class="modal fade" id="myModalSignIn" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4><span class="glyphicon glyphicon-user"></span> Sign in</h4>
+        </div>
+        <div class="modal-body">
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname"><span class="glyphicon glyphicon-user"></span> Username </label>
+              <input type="text" class="form-control" id="usrname" placeholder="Enter Email">
+            </div>
+            <div class="form-group">
+              <label for="psw"><span class="glyphicon glyphicon-lock"></span> Password</label>
+              <input type="password" class="form-control" id="psw" placeholder="Enter Password">
+            </div>
+
+              <button class="btn btn-block" ><a href="savings.html">Sign in
+                </a><span class="glyphicon glyphicon-ok"></span>
+              </button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+            <span class="glyphicon glyphicon-remove"></span> Cancel
+          </button>
+          <p>Need <a href="#">help?</a></p>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
+<!-- Modal for Sign Up-->
+<div class="modal fade" id="myModalSignUp" role="dialog">
+  <div class="modal-dialog">
 
-<!-- Container (Income Section) -->
-<div id="income" class="bg-1">
-  <fieldset>
-    <div class="container">
-
-      <legend style="border-color:white;color:white"><h3 class="text-center" onclick="getIncome()">Income Details</h3></legend>
-      <!--<p class="text-center">I have decided to save some money.</p>-->
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4><span class="glyphicon glyphicon-user"></span> Sign Up</h4>
+      </div>
       <div class="modal-body">
         <form role="form">
           <div class="form-group">
-            <label for="userId"> User Id </label>
-            <input type="number" class="form-control" id="userId" placeholder="Enter User Id">
+            <label for="usrname">Username </label>
+            <input type="text" class="form-control" id="Name" placeholder="Enter Username">
+          </div>
+          <div class="form-group">
+            <label for="password">Password </label>
+            <input type="text" class="form-control" id="password" placeholder="Set Up a Password">
+          </div>
+          <div class="form-group">
+            <label for="DOB"> Date of Birth</label>
+            <input type="date" class="form-control" id="DOB" placeholder="Enter Date of Birth">
           </div>
 
           <div class="form-group">
-            <label for="sourcefIncome"> Source Of Income </label>
-            <input type="text" class="form-control" id="sourcefIncome" placeholder="Enter Source of Income">
+            <label for="Age"> Age</label>
+            <input type="number" class="form-control" id="age" placeholder="Enter Age">
           </div>
 
           <div class="form-group">
-            <label for="income">Income</label>
-            <input type="number" class="form-control" id="income" placeholder="Enter Income">
+            <label for="Gender"> Gender</label>
+            <input type="text" class="form-control" id="gender" placeholder="Enter Gender">
           </div>
 
           <div class="form-group">
-            <label for="tax">Tax</label>
-            <input type="number" class="form-control" id="tax" placeholder="Enter Tax in %">
+            <label for="Category"> Category</label>
+            <input type="text" class="form-control" id="category" placeholder="Enter Category (Ex: Open,SC,ST,etc)">
           </div>
 
-        <!--<div class="form-group">
-            <label for="inHand">In-Hand Amount</label>
-            <input type="number" class="form-control" id="inHand" placeholder="Get From database">
-          </div>-->
-          <br/>
-            <button onclick="getLatestApi()" class="btn btn-round btn-primary" style="background-color:blue;color:white;margin-left:40%">Submit
+          <div class="form-group">
+            <label for="Occupation"> Occupation</label>
+            <input type="text" class="form-control" id="occupation" placeholder="Enter Occupation">
+          </div>
+
+
+            <button type="submit" class="btn btn-block">Sign up
+              <span class="glyphicon glyphicon-ok"></span>
             </button>
         </form>
-        <br/><br/>
-        <table width="100%" border="1" cell-padding="10px" style="border-color:white;" >
-          <thead class="text-center" id="incomeTable">
-            <tr>
-
-			<th style="text-align:center;">UserID</th>
-            <th style="text-align:center;">Source of Income</th>
-            <th style="text-align:center;">Income</th>
-            <th style="text-align:center;">Tax (in %)</th>
-            <th style="text-align:center;">In-Hand Cash</th>
-          </tr>
-          </thead>
-          <tbody>
-
-          </tbody>
-        </table>
       </div>
-
-</div>
-</fieldset>
-</div>
-
-<!-- Container (Expenses Section) -->
-<div id="expenses" class="bg-1">
-    <fieldset>
-    <div class="container">
-      <legend style="border-color:white;color:white"><h3 class="text-center" onclick="getExpense()">My Expenses</h3></legend>
-      <br/><br/>
-      <div class="modal-body">
-      <form role="form">
-        <div class="form-group">
-          <label for="userId"> User Id </label>
-          <input type="number" class="form-control" id="userId" placeholder="Enter User Id">
-        </div>
-        <div class="form-group">
-          <label for="product"> Product </label>
-          <input type="text" class="form-control" id="product" placeholder="Enter the Product Name">
-        </div>
-
-        <div class="form-group">
-          <label for="price">Price</label>
-          <input type="number" class="form-control" id="price" placeholder="Enter Price of the Product">
-        </div>
-
-        <div class="form-group">
-          <label for="quantity">Quantity</label>
-          <input type="number" class="form-control" id="quantity" placeholder="Enter Quantity">
-        </div>
-
-      <!--<div class="form-group">
-          <label for="inHand">In-Hand Amount</label>
-          <input type="number" class="form-control" id="inHand" placeholder="Get From database">
-        </div>-->
-        <br/>
-          <button type="submit" class="btn btn-round btn-primary" style="background-color:blue;color:white;margin-left:40%">Submit
-          </button>
-      </form>
-      <br/><br/>
-      <table width="100%" border="1" cell-padding="10px" style="border-color:white;">
-        <thead class="text-center" id="expenseTable">
-          <tr>
-          <th style="text-align:center;">User ID</th>
-          <th style="text-align:center;">Date</th>
-          <th style="text-align:center;">Product</th>
-          <th style="text-align:center;">Price</th>
-          <th style="text-align:center;">Quantity</th>
-          <th style="text-align:center;">Total Amount</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal">
+          <span class="glyphicon glyphicon-remove"></span> Cancel
+        </button>
+        <p>Need <a href="#">help?</a></p>
+      </div>
     </div>
-      <!--<p class="text-center">I have decided to save some money.</p>-->
-
+  </div>
 </div>
-</fieldset>
 </div>
-
-<!-- Container (Long term goals Section) -->
-<div id="LTG" class="bg-1">
-    <fieldset>
-    <div class="container">
-      <legend style="border-color:white;color:white"><h3 class="text-center" onclick="getLongTerm()">Long Term Goals</h3></legend>
-      <p class="text-center">Do not leave yourself or your family unprotected against financial storms... Build up savings. </p>
-      <p class="text-center">Save now, Enjoy later. </p>
-      <br/><br/>
-      <table width="100%" border="1" cell-padding="10px" style="border-color:white;">
-        <thead class="text-center" id="longTermTable">
-          <tr>
-            <th style="text-align:center;">User ID</th>
-          <th style="text-align:center;">Month</th>
-          <th style="text-align:center;">Purpose</th>
-          <th style="text-align:center;">Percentage of Income</th>
-          <th style="text-align:center;">Amount required</th>
-          <th style="text-align:center;">Amount saved</th>
-          <th style="text-align:center;">Savings Deficit</th>
-        </tr>
-        <tr>
-        <td>erYdWHAJ</td>
-        <td>April, 2018</td>
-        <td>Retirement</td>
-        <td>10</td>
-        <td>1738</td>
-        <td>1738</td>
-        <td>0</td>
-        </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
-      <!--<p class="text-center">I have decided to save some money.</p>-->
-
-</div>
-</fieldset>
-</div>
-
-<!-- Container (Short term goals Section) -->
-<div id="STG" class="bg-1">
-    <fieldset>
-    <div class="container">
-      <legend style="border-color:white;color:white"><h3 class="text-center">Short Term Goals</h3></legend>
-      <p class="text-center">Set goals that you plan to achieve within a year. </p>
-      <p class="text-center">A goal without a plan is just a wish. </p>
-      <br/><br/>
-      <div class="modal-body">
-      <form role="form">
-        <div class="form-group">
-          <label for="userId"> User Id </label>
-          <input type="number" class="form-control" id="userId" placeholder="Enter User Id">
-        </div>
-        <div class="form-group">
-          <label for="goal"> Goal </label>
-          <input type="text" class="form-control" id="goal" placeholder="Enter your Goal (Ex:Product you want to buy, events you want to save for,etc)">
-        </div>
-
-        <div class="form-group">
-          <label for="amountRequired">Amount Required</label>
-          <input type="number" class="form-control" id="amountRequired" placeholder="Enter Amount Required for the Goal">
-        </div>
-
-        <div class="form-group">
-          <label for="quantity">Goal fulfillment period</label>
-          <input type="number" class="form-control" id="quantity" placeholder="Enter the number of months in which you need to achieve the goal">
-        </div>
-
-      <!--<div class="form-group">
-          <label for="inHand">In-Hand Amount</label>
-          <input type="number" class="form-control" id="inHand" placeholder="Get From database">
-        </div>-->
-        <br/>
-          <button type="submit" class="btn btn-round btn-primary" style="background-color:blue;color:white;margin-left:40%">Submit
-          </button>
-      </form>
-      <br/><br/>
-      <table width="100%" border="1" cell-padding="10px" style="border-color:white;">
-        <thead class="text-center">
-          <tr>
-
-          <th style="text-align:center;">Month</th>
-          <th style="text-align:center;">Goal</th>
-          <th style="text-align:center;">Amount </br>Required</th>
-          <th style="text-align:center;">Goal Fulfillment</br> Period</th>
-          <th style="text-align:center;">Estimate </br>Savings(monthly)</th>
-          <th style="text-align:center;">Your savings</th>
-          <th style="text-align:center;">Savings Deficit</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
-      <!--<p class="text-center">I have decided to save some money.</p>-->
-    </div>
-</div>
-</fieldset>
-</div>
-
-<!-- Container (Short term goals Section) -->
-<div id="investment" class="bg-1">
-    <fieldset>
-    <div class="container">
-      <legend style="border-color:white;color:white"><h3 class="text-center">Investments</h3></legend>
-      <p class="text-center">Never depend on a single income. Make investment to create a second source. </p>
-
-      <br/><br/>
-      <table width="100%" border="1" cell-padding="10px" style="border-color:white;">
-        <thead class="text-center">
-          <tr>
-            <th style="text-align:center;">User ID</th>
-          <th style="text-align:center;">Month</th>
-          <th style="text-align:center;">Amount left</th>
-          <th style="text-align:center;">Estimate amount in Mutual funds</th>
-          <th style="text-align:center;">Estimate amount in Stocks</th>
-        </tr>
-        </thead>
-        <tbody>
-
-        </tbody>
-      </table>
-      <!--<p class="text-center">I have decided to save some money.</p>-->
-
-</div>
-
-</fieldset>
-</div>
-
 <!-- Container (Contact Section)
 <div id="contact" class="container">
   <h3 class="text-center">Contact</h3>
@@ -851,68 +692,6 @@ $(document).ready(function(){
   });
 })
 </script>
-<script type="text/javascript">
-    function getIncome()
-    {
-     fetch("http://localhost:8080/SavingsCalc/webapi/user/erYdWHAJ/income").then(function(res){
-        return res.json();
-      }).then(function(data) {
-        getIncomeTable(data);
-      });
-    }
-    function getExpense()
-    {
-     fetch("http://localhost:8080/SavingsCalc/webapi/user/erYdWHAJ/expense").then(function(res){
-        return res.json();
-      }).then(function(data) {
-        getExpenseTable(data);
-      });
-    }
-    function getLongTerm()
-    {
-    	var x="";
-    	x+="<tr><td>"+erYdWHAJ+"</td>";
-    	x+="<td>"+April+"</td>";
-    	x+="<td>"+Retirement+"</td>";
-    	x+="<td>"+10+"</td>";
-    	x+="<td>"+488+"</td>";
-    	x+="<td>"+488+"</td>";
-    	x+="<td>"+0+"</td></tr>";
-    	document.getElementById("longTermTable").innerHTML+=x;
-    }
-    function getIncomeTable(data)
-    {
-      console.log(data);
-      var x="";
-      for(i in data)
-      {
-    	x+="<tr><td>"+data[i].uid+"</td>";
-        x+="<td>"+data[i].source+"</td>";
-        x+="<td>"+data[i].income+"</td>";
-        x+="<td>"+data[i].tax+"</td>";
-        x+="<td>"+data[i].inHand+"</td></tr>";
-      }
-      document.getElementById("incomeTable").innerHTML+=x;
-      
-    }
-    function getExpenseTable(data)
-    {
-      console.log(data);
-      var x="";
-      for(i in data)
-      {
-        x+="<tr><td>"+data[i].uid+"</td>";
-        x+="<td>"+data[i].date+"</td>";
-        x+="<td>"+data[i].product+"</td>";
-        x+="<td>"+data[i].price+"</td>";
-        x+="<td>"+data[i].quantity+"</td>";
-        x+="<td>"+data[i].amount+"</td></tr>";
-      }
-      document.getElementById("expenseTable").innerHTML+=x;
-      
-    }
-    
-    </script>
 
 </body>
 </html>

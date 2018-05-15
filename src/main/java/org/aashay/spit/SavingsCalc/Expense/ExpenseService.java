@@ -16,10 +16,10 @@ public class ExpenseService {
 		try
 		{
 			Statement stmt=mysql.connectToDatabase();
-			String query="select * from Expense where UserID='"+uid+"'";
+			String query="select Month,Product,Quantity,Price,Amount from Expense where UserID='"+uid+"'";
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next())
-				list.add(new Expense(rs.getString(1),rs.getDate(2).toString(),rs.getString(3),rs.getInt(4),rs.getInt(5),rs.getInt(6)));
+				list.add(new Expense(rs.getString(1).toString(),rs.getString(2),rs.getInt(3),rs.getInt(4),rs.getInt(5)));
 		}
 		catch(Exception e)
 		{
@@ -29,6 +29,11 @@ public class ExpenseService {
 	}
 	public int postToDatabase(Expense expense)
 	{
+		System.out.println(expense.getProduct());
+		System.out.println(expense.getPrice());
+		System.out.println(expense.getQuantity());
+		System.out.println(expense.getUid());
+		System.out.println(expense.getDate());
 		try
 		{
 			Statement stmt=mysql.connectToDatabase();

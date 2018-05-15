@@ -17,9 +17,8 @@ public class Expense {
 		this.price=price;
 		this.quantity = quantity;
 	}
-	public Expense(String uid, String date, String product, int quantity,int price ,int amount) {
+	public Expense(String date, String product, int quantity,int price ,int amount) {
 		super();
-		this.uid = uid;
 		this.date = date;
 		this.product = product;
 		this.price=price;

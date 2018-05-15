@@ -42,31 +42,39 @@ public class UserService {
 		return false;
 	}
 	
-	public ArrayList<User> getUserByUid(String uid)
+	public User getUserByUid(String uid)
 	{
-		ArrayList<User> list=new ArrayList<>();
+		User user=null;
 		try
 		{
 			Statement stmt=mysql.connectToDatabase();
-			String query="select * from User where UserID='"+uid+"'";
+			String query="select Username,DOB,Age,Gender,Category,Occupation from User where UserID='"+uid+"'";
 			ResultSet rs=stmt.executeQuery(query);
 			while(rs.next())
-				list.add(new User(rs.getString(1),rs.getString(2),rs.getDate(3).toString(),rs.getInt(4),rs.getString(5),rs.getString(6),rs.getString(7)));
+				user=new User(rs.getString(1),rs.getDate(2).toString(),rs.getInt(3),rs.getString(4),rs.getString(5),rs.getString(6));
 		}
 		catch(Exception e)
 		{
 			System.out.println(e);
 		}
-		return list;
+		return user;
 	}
 
 	public int postUserToDatabase(User user) 
 	{
+		System.out.println("Age: "+user.getAge());
+		System.out.println("Category: "+user.getCategory());
+		System.out.println("Date of birth: "+user.getDob());
+		System.out.println("Gender: "+user.getGender());
+		System.out.println("Username: "+user.getName());
+		System.out.println("Occupation: "+user.getOccupation());
+		System.out.println("Password: "+user.getPassword());
 		try
 		{
 			user.setUid(generateUid(8));
 			Statement stmt=mysql.connectToDatabase();
-			String query="insert into User value('"+user.getName()+"','"+user.getUid()+"','"+user.getDob()+"',"+user.getAge()+",'"+user.getGender()+"','"+user.getCategory()+"','"+user.getOccupation()+"')";
+			String query="insert into User value('"+user.getName()+"','"+user.getUid()+"','"+user.getDob()+"',"+user.getAge()+",'"+user.getGender()+"','"+user.getCategory()+"','"+user.getOccupation()+"','"+user.getPassword()+"')";
+			System.out.println(query);
 			return stmt.executeUpdate(query);
 		}
 		catch(Exception e)
@@ -74,6 +82,27 @@ public class UserService {
 			System.out.println(e);
 		}
 		return -1;
+	}
+
+	public User getUid(String name,String password) 
+	{
+		User user=null;
+		System.out.println("Username: "+name);
+		System.out.println("Password: "+password);
+		try
+		{
+			Statement stmt=mysql.connectToDatabase();
+			String query="select UserID from User where Username='"+name+"' and Password='"+password+"'";
+			ResultSet rs=stmt.executeQuery(query);
+			if(rs.next())
+				user=new User(rs.getString(1));
+		}
+		catch (Exception e) 
+		{
+			System.out.println(e);
+		}
+		System.out.println("UserID: "+user.getUid());
+		return user;
 	}
 	
 }

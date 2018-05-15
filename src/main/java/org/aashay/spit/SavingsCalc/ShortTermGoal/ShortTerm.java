@@ -7,9 +7,18 @@ public class ShortTerm {
 	private String purpose;
 	private int amountRequired;
 	private int period;
+	private int estimatedSavings;
 	private int amountSaved;
 	private int savingsDeficit;
 	
+	public int getEstimatedSavings() {
+		return estimatedSavings;
+	}
+
+	public void setEstimatedSavings(int estimatedSavings) {
+		this.estimatedSavings = estimatedSavings;
+	}
+
 	public ShortTerm(String uid, String purpose, int amountRequired, int period) {
 		super();
 		this.uid=uid;
@@ -18,16 +27,16 @@ public class ShortTerm {
 		this.period = period;
 	}
 
-	public ShortTerm(String uid, String month, String purpose, int amountRequired, int period, int amountSaved,
-			int savingsDeficit) {
+	public ShortTerm(String month, String purpose, int amountRequired, int period, int amountSaved,
+			int savingsDeficit,int estimatedSavings) {
 		super();
-		this.uid = uid;
 		this.month = month;
 		this.purpose = purpose;
 		this.amountRequired = amountRequired;
 		this.period = period;
 		this.amountSaved = amountSaved;
 		this.savingsDeficit = savingsDeficit;
+		this.estimatedSavings=estimatedSavings;
 	}
 
 	public ShortTerm() {
